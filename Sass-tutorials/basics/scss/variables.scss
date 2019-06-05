@@ -1,0 +1,15 @@
+$div-color: steelblue;
+$p-background-color: green;
+$li-font-size: 2rem;
+
+div {
+  color: $div-color;
+}
+
+li {
+  font-size: $li-font-size;
+}
+
+p {
+  background-color: $p-background-color;
+}
