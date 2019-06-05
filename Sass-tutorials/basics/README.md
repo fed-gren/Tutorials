@@ -33,3 +33,30 @@ Sass는 app/sass 폴더에 있는 모둔 파일의 변화에 대해 감시하고
 <br/>
 
 ---
+
+## 변수 (Variables)
+
+변수는 재사용하기 원하는 정보를 저장할 때 아주 유용합니다. 폰트, 폰트 색상 등과 같은 CSS의 모든 값을 재사용할 수 있습니다. Sass에서 `$`를 사용하여 변수를 만들 수 있습니다.
+
+아래 예시는 변수를 사용하여 작성한 scss 파일과 이 scss 파일을 컴파일한 css 파일의 내용입니다.
+
+```scss
+$font-stack: Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+```
+
+```css
+body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+```
+
+<br/>
+
+---
