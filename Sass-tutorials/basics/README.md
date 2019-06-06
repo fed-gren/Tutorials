@@ -60,3 +60,57 @@ body {
 <br/>
 
 ---
+
+## Nesting
+
+Nesting은 `둥지를 튼다`는 의미입니다. Sass에서는 자식 태그에 스타일을 줄 때 부모 태그에 둥지를 튼 듯한 형태로 스타일을 작성하면 자식 태그에 적용됩니다.
+
+HTML을 작성 할 때, 부모 자식 관계는 중첩에 의해 시각적으로 계층 구조를 확인할 수 있지만 일반적인 CSS에서는 그렇지 않습니다.
+
+Sass는 HTML의 동일한 시각적 계층구조를 따르는 방식으로 CSS 선택자에 중첩이 가능하게 해줍니다.(중첩은 부모-자식 관계를 의미합니다.) 하지만 지나치게 중첩된 구조는 유지보수가 어렵기 때문에 좋은 구조는 아니라는 점을 기억해야 합니다.
+
+아래는 중첩구조의 Sass와 컴파일 된 CSS 예시입니다.
+
+```scss
+nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+```
+
+```css
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav li {
+  display: inline-block;
+}
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+```
+
+<br/>
+
+---
+
+## 참고
+
+- [Sass Basics](https://sass-lang.com/guide)
