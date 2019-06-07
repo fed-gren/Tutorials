@@ -61,7 +61,7 @@ body {
 
 ---
 
-## Nesting
+## 중첩 (Nesting)
 
 Nesting은 `둥지를 튼다`는 의미입니다. Sass에서는 자식 태그에 스타일을 줄 때 부모 태그에 둥지를 튼 듯한 형태로 스타일을 작성하면 자식 태그에 적용됩니다.
 
@@ -104,6 +104,66 @@ nav a {
   display: block;
   padding: 6px 12px;
   text-decoration: none;
+}
+```
+
+<br/>
+
+---
+
+## Partials
+
+Sass 파일을 작게 나누어 모듈화 할 수 있습니다. 모듈로 사용하고자 나눈 파일명은 \_partial.scss와 같이 밑줄(\_)로 시작하도록 작성합니다. 파일명 앞에 밑줄(\_)이 있어야 Sass가 이 파일이 모듈임을 알고 단독 CSS 파일로 컴파일 하지 않습니다.
+
+이 모듈은 다른 sass 파일에서 @import로 불러서 사용합니다.
+
+<br/>
+
+---
+
+## Import
+
+CSS에서 유지 보수를 좀 더 편하게 하기 위해 CSS를 가져오는 옵션이 있습니다. 이 방법의 단점은 CSS에서 @import를 사용할 때마다 새로운 HTTP 요청을 만든다는 점입니다.
+
+Sass는 CSS @import 기반으로 구성되지만 HTTP 요청을 새로 만들지 않고, 단일 CSS 파일을 웹 브라우저에게 제공할 수 있도록 파일들을 결합합니다.
+
+아래 예시는 \_reset.scss를 base.scss로 불러와 사용하는 예시입니다.
+
+**\_reset.scss**
+
+```scss
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+```
+
+**base.scss**
+
+```scss
+@import "reset";
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: #efefef;
+}
+```
+
+**base.css**
+
+```css
+html,
+body,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: #efefef;
 }
 ```
 
