@@ -1,0 +1,14 @@
+@mixin odd_list($odd_list_color) {
+  font-size: 0.8rem;
+  color: $odd_list_color;
+  background-color: #777;
+}
+
+#mixins li {
+  color: black;
+  font-size: 0.8rem;
+}
+
+#mixins .odd {
+  @include odd_list(pink);
+}

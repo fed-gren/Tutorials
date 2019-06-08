@@ -1,0 +1,12 @@
+#mixins li {
+  color: black;
+  font-size: 0.8rem;
+}
+
+#mixins .odd {
+  font-size: 0.8rem;
+  color: pink;
+  background-color: #777;
+}
+
+/*# sourceMappingURL=mixins.css.map */
