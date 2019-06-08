@@ -171,6 +171,39 @@ body {
 
 ---
 
+## Mixins
+
+Mixin은 재사용하기 위한 css 선언 그룹을 만들수 있는 기능입니다. mixin은 함수처럼 값을 입력받도록 만들어 유연하게 사용할 수 있습니다.
+
+Mixin은 `@mixin`으로 선언하고, `@include`로 사용합니다. 파라미터를 정의할 땐 변수를 사용했을 때와 같이 \$에 변수명을 붙입니다.
+
+**Sass**
+
+```scss
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -ms-transform: $property;
+  transform: $property;
+}
+.box {
+  @include transform(rotate(30deg));
+}
+```
+
+**CSS**
+
+```css
+.box {
+  -webkit-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+```
+
+<br/>
+
+---
+
 ## 참고
 
 - [Sass Basics](https://sass-lang.com/guide)
