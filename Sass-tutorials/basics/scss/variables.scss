@@ -2,14 +2,14 @@ $div-color: steelblue;
 $p-background-color: green;
 $li-font-size: 2rem;
 
-div {
+#variables div {
   color: $div-color;
 }
 
-li {
+#variables li {
   font-size: $li-font-size;
 }
 
-p {
+#variables p {
   background-color: $p-background-color;
 }

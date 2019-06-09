@@ -1,0 +1,22 @@
+.success, .warning, .error, .message {
+  border: 1px solid #333;
+  padding: 10px;
+  color: #333;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.warning {
+  color: orange;
+  font-weight: 700;
+}
+
+.success {
+  color: green;
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=extend.css.map */

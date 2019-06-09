@@ -1,12 +1,12 @@
-div {
+#variables div {
   color: steelblue;
 }
 
-li {
+#variables li {
   font-size: 2rem;
 }
 
-p {
+#variables p {
   background-color: green;
 }
 

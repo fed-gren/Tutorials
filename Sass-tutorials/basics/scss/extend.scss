@@ -1,0 +1,24 @@
+%message-shared {
+  border: 1px solid #333;
+  padding: 10px;
+  color: #333;
+}
+
+.message {
+  @extend %message-shared;
+}
+.error {
+  @extend %message-shared;
+  color: red;
+  font-weight: bold;
+}
+.warning {
+  @extend %message-shared;
+  color: orange;
+  font-weight: 700;
+}
+.success {
+  @extend %message-shared;
+  color: green;
+  font-weight: 500;
+}
