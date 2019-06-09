@@ -204,6 +204,77 @@ Mixin은 `@mixin`으로 선언하고, `@include`로 사용합니다. 파라미�
 
 ---
 
+## Extend/Inheritance
+
+상속은 Sass에서 가장 유용한 기능 중 하나입니다. `@extend`를 사용하면 한 선택자에서 다른 선택자로 CSS 속성을 공유할 수 있습니다.
+아래 예시 코드는 상속을 사용해서 errors, warnings, successes 메시지 스타일 속성을 지정해주는 코드입니다.
+
+```scss
+/* This CSS will print because %message-shared is extended. */
+%message-shared {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+// This CSS won't print because %equal-heights is never extended.
+%equal-heights {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.message {
+  @extend %message-shared;
+}
+
+.success {
+  @extend %message-shared;
+  border-color: green;
+}
+
+.error {
+  @extend %message-shared;
+  border-color: red;
+}
+
+.warning {
+  @extend %message-shared;
+  border-color: yellow;
+}
+```
+
+```css
+/* This CSS will print because %message-shared is extended. */
+.message,
+.success,
+.error,
+.warning {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}
+```
+
+위 코드에서 message, success, error, warning 클래스를 가진 요소들이 %message-shared 스타일을 공통적으로 가진다는 것을 알 수 있습니다. 상속 받은 스타일 외 각 클래스 별로 부여한 스타일 속성은 따로 적용되었습니다. 이처럼 상속을 사용하면 HTML 요소에 여러 개의 클래스명을 작성하지 않아도 된다는 이점이 있습니다.
+
+참고로 %equal-heights 관련 속성은 CSS에 나타나지 않았는데, 이는 %equal-heights를 상속받아 사용하지 않았기 때문입니다.
+
+<br/>
+
+---
+
 ## 참고
 
 - [Sass Basics](https://sass-lang.com/guide)
