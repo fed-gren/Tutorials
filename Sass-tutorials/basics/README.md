@@ -275,6 +275,46 @@ Mixin은 `@mixin`으로 선언하고, `@include`로 사용합니다. 파라미�
 
 ---
 
+## Operators
+
+Sass에서는 간단한 연산자(+, -, \*, /, %)를 사용하여 스타일 속성 값을 적용시켜줄 수 있습니다. 아래 예시는 aside, article 요소의 너비를 계산하기 위한 코드입니다.
+
+```scss
+.container {
+  width: 100%;
+}
+
+article[role="main"] {
+  float: left;
+  width: 600px / 960px * 100%;
+}
+
+aside[role="complementary"] {
+  float: right;
+  width: 300px / 960px * 100%;
+}
+```
+
+```css
+.container {
+  width: 100%;
+}
+
+article[role="main"] {
+  float: left;
+  width: 62.5%;
+}
+
+aside[role="complementary"] {
+  float: right;
+  width: 31.25%;
+}
+```
+
+<br/>
+
+---
+
 ## 참고
 
 - [Sass Basics](https://sass-lang.com/guide)
